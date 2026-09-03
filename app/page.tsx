@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { ArrowRight, BookOpen, Brain, Check, ChevronDown, Clock3, CloudMoon, Eye, FileText, Heart, Infinity, KeyRound, LockKeyhole, MessageCircle, MoonStar, ShieldCheck, Sparkles, Star } from 'lucide-react';
 
-const checkout = '#oferta';
+const checkout = 'https://pay.wiapy.com/rAMUZYNpu0q5';
 const benefits = [
   { icon: Brain, title: 'Entenda os sinais', text: 'Identifique símbolos, emoções e padrões que seu inconsciente repete.' },
   { icon: Heart, title: 'Acorde mais leve', text: 'Troque a ansiedade do “o que isso quer dizer?” por clareza e direção.' },
@@ -17,7 +17,7 @@ const faqs = [
   ['Como funciona a garantia?', 'Você tem 7 dias para conhecer o material. Se sentir que não é para você, basta solicitar o reembolso pelo e-mail de suporte.'],
   ['Quais são as formas de pagamento?', 'O pagamento pode ser feito por cartão de crédito ou Pix, conforme as opções exibidas na página segura de checkout.'],
 ];
-function CTA({ label = 'QUERO DECODIFICAR MEUS SONHOS' }: { label?: string }) { return <a href={checkout} className="cta">{label}<ArrowRight size={20} /></a>; }
+function CTA({ label = 'QUERO DECODIFICAR MEUS SONHOS', href = '#oferta' }: { label?: string; href?: string }) { return <a href={href} className="cta">{label}<ArrowRight size={20} /></a>; }
 
 export default function Home() {
   return <main>
@@ -79,7 +79,7 @@ export default function Home() {
             <span className="offer-price-badge"><Sparkles size={13} aria-hidden="true" /> Acesso vitalício</span>
             <p>Pagamento único • Sem assinaturas</p>
           </div>
-          <CTA label="SIM! QUERO RECEBER AGORA" />
+          <CTA label="SIM! QUERO RECEBER AGORA" href={checkout} />
           <p className="offer-payment-note"><LockKeyhole size={13} aria-hidden="true" /><span>Pagamento seguro via Pix ou cartão<br />Acesso enviado no WhatsApp</span></p>
         </div>
       </div>
